@@ -18,7 +18,6 @@ These are the steps to get this application up and running in your local machine
 ````
 
 * How to run tests **_steps are pending_**
-
 * Deployment instructions **_steps are pending_**
 
 ### Contribution guidelines ###
