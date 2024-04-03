@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digi Flow</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: "Kumbh Sans";
+    }
+
+    header {
+      margin-bottom: 70px;
+    }
+
+    header .action_btn{
+      display: none;
+    }
+
+    .footer-clean {
+        margin-top: 70px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center; 
+      align-items: center; 
+      flex-direction: column; 
+      width: 475px !important;
+      height: 375px;
+      border-radius: 20px;
+      border: 0.6px solid #847AF6;
+      background: #1E2A54;
+      box-shadow: 1px 3px 4px 0px rgba(57, 54, 238, 0.25);
+      backdrop-filter: blur(100px);
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      padding-left: 25px;
+      padding-right: 25px;
+      width: auto;
+      height: auto;
+    }
+
+    .contact-form h1 {
+      color: #FFF;
+      font-size: 25px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      margin-bottom: 35px;
+      text-align: center;
+    }
+
+    .contact-form p {
+      color: #ffffff;
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;      
+      text-align: center;
+    }
+
+    @media only screen and (max-width: 500px) {
+
+        .container {
+            height: auto;
+            width:100% !important;;
+            margin-top: 60px;
+            margin-bottom: 68px;
+        }
+    }
+
+  </style>
+</head>
+<body>
+<!-- Include the header -->
+{% include 'header.html' %}
+  <div class="container">
+    <form class="contact-form" method="post">
+      {% csrf_token %}
+      <h1>Your message has been successfully submitted. </h1>
+      <p>We appreciate your interest and will respond promptly.<br>Have a great day!</p>
+    </form>
+  </div>
+<!-- Include the footer -->
+{% include 'footer.html' %}
+
+<script>
+  // Prevent users from navigating back
+  history.pushState(null, null, location.href);
+  window.onpopstate = function () {
+      history.go(1);
+  };
+</script>
+
+
+</body>
+</html>
+
+
+

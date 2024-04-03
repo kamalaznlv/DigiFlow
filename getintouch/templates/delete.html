@@ -1,0 +1,196 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digi Flow</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() {
+
+        $('#id_project_type').change(function() {
+            if ($(this).val() == '') {
+                $(this).addClass('placeholder');
+            } else {
+                $(this).removeClass('placeholder');
+            }
+        });
+        if ($('#id_project_type').val() == '') {
+            $('#id_project_type').addClass('placeholder');
+        } else {
+            $('#id_project_type').removeClass('placeholder');
+        }
+      });
+    </script>
+
+  <style>
+
+
+    body {
+      font-family: "Kumbh Sans";
+    }
+
+    header {
+      margin-bottom: 70px;
+    }
+
+    header .action_btn{
+      display: none;
+    }
+
+    .footer-clean {
+        margin-top: 70px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center; 
+      align-items: center; 
+      flex-direction: column; 
+      width: 475px !important;
+      height: 375px;
+      border-radius: 20px;
+      border: 0.6px solid #847AF6;
+      background: #1E2A54;
+      box-shadow: 1px 3px 4px 0px rgba(57, 54, 238, 0.25);
+      backdrop-filter: blur(100px);
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 16px;
+      padding-top: 28px;
+      padding-left: 35px;
+      padding-right: 35px;
+      width: auto;
+      height: auto;
+    }
+
+    .input-group {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      margin-bottom: 29px;   
+    }
+
+    .contact-form h1 {
+      color: #FFF;
+      font-size: 25px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      margin-bottom: 1px;
+    }
+
+    .contact-form p {
+      color: #ffffff;
+      font-size: 10px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      margin-bottom: 35px;
+    }
+
+    .input-group input,
+    .input-group select {
+      color: #000000;
+      border-radius: 10px !important;
+      border: 0.5px solid #000000;
+      background: #ffffff;
+      width: 100%;
+      max-width: 195px;
+      height: 28px;
+      font-size: 8px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: normal;
+      padding: 8px;
+    }
+
+  
+    .input-group textarea {
+      resize: none;
+      width: 405px;
+      height: 87px;
+      border-radius: 10px !important;
+      border: 0.5px solid #000;
+      color: #000 ;
+      font-family: "Kumbh Sans";
+      font-size: 8px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: normal;
+      padding: 8px;
+    }
+
+
+    .button {
+      background-color: white;
+      border-radius: 10px;
+      border: 0.5px solid #000;
+      width: 80px;
+      height: 28px;
+      cursor: pointer;
+      color: #1A47E5;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      margin-top: -6px;    
+      margin-left: auto; 
+      margin-right: auto;
+    }
+
+    .button:hover {
+      background-color: #1A47E5;
+      color: #FFF;
+    } 
+
+    .input-group input::placeholder,
+    .input-group select::placeholder, 
+    .input-group textarea::placeholder {
+      color: #000000;
+    }
+
+
+
+  </style>
+</head>
+<body>
+<!-- Include the header -->
+{% include 'header.html' %}
+  <div class="container">
+    <form class="contact-form" method="post">
+      {% csrf_token %}
+      <h1>Get in Touch</h1>
+      <p>Any question or remarks? Let us know!</p>
+      <div class="input-group">
+        {{ form.name }}
+        {{ form.city }}
+      </div>
+      <div class="input-group">
+        {{ form.email }}
+        <select name="project_type" id="id_project_type" class="select">
+          <option value="" selected disabled>Select project type</option>
+          {% for value, label in form.fields.project_type.choices %}
+              <option value="{{ value }}">{{ label }}</option>
+          {% endfor %}
+      </select>
+      </div>
+      <div class="input-group">
+        {{ form.description }}
+      </div>
+      <button class="button" type="submit">Submit</button>
+    </form>
+  </div>
+
+<!-- Include the footer -->
+{% include 'footer.html' %}
+</body>
+</html>
+
+
+

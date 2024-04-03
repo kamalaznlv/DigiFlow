@@ -1,0 +1,1059 @@
+{% load static %}
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Digiflow</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Kumbh Sans', sans-serif;
+        }
+
+/* CONTAINER TEAM */
+        .container-team {
+            display: flex;
+            position: relative;
+            height: 641px;
+            margin-top: 27px;
+            margin-bottom: 172px;
+        }
+
+        .content,
+        .image-container {
+            position: absolute; 
+        }
+
+        .content {
+            z-index: 1; 
+            left: 135px;
+        }
+
+        .image-container {
+            z-index: 0; 
+            right: 103px;
+        }
+
+        .social-links {
+            position: absolute;
+            left: 0;
+            bottom: 53px;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            width: auto;
+        }
+
+        .image-container img {
+            width: 824px;
+            height: 641px;
+        }
+
+        .content h1{
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 72px;
+            letter-spacing: 0em;
+            text-align: left;
+            width: auto;
+            height: auto;
+            margin-top: 102px;
+            margin-bottom: 0;
+        }
+
+        .content h2 {
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 30px;
+            letter-spacing: 0em;
+            text-align: left;
+            width: auto;
+            height: auto;
+            opacity: 50%;
+            margin-top: 32px;
+            margin-bottom: 72px;
+        }
+        
+        .how-it-works-btn {
+            border: none;
+            outline: none;
+            cursor: pointer;
+            width: 211px;
+            height: 66px;
+            padding: 24px 48px; 
+            border-radius: 59px;
+            background-color: #1A47E5;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 22px;
+            text-align: center;
+            color: #fff; 
+            text-decoration: none;
+            display: inline-block;
+        } 
+
+        .how-it-works-btn:hover {
+            scale: 1.02;
+            color: black;
+            text-decoration: none !important;
+        }
+
+/* CONTAINER WORK  */
+
+        .container-work{
+            margin-bottom: 172px;
+        }
+
+        .how-we-work {
+            text-align: center;
+            margin-left: 135px;
+            margin-right: 135px;
+            margin-bottom: 72px;
+        }
+
+        .container-steps{
+            margin-left: 135px;
+            margin-right: 135px;
+        }
+
+        .custom-row{
+            display: flex;
+            flex-direction: row; 
+            justify-content: space-between;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            margin-bottom: 50px !important;
+        }
+
+        .step{
+            padding: 0 !important;
+            text-align: left;
+            width: 470px;
+        }
+
+        .container-work h2{
+            width: auto;
+            color: black;
+            text-align: center;
+            font-family: "Kumbh Sans";
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: 6px;
+            opacity: 50%;
+            margin-bottom: 24px;
+
+        }
+
+        .container-work h1{
+            color:black;
+            font-family: "Kumbh Sans";
+            font-size: 36px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            margin-bottom: 72px;
+            height: 36px;
+        }
+
+        .step h3{
+            color: #000;
+            font-family: "Kumbh Sans";
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            margin-bottom: 24px;
+        }
+
+        .step p{
+            color: rgba(0, 0, 0, 0.70);
+            font-family: "Kumbh Sans";
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%;
+            opacity: 70%;
+        }
+
+        .number {
+            width: 40px;
+            height: 40px;
+            position: relative;
+            background-color: #1A47E6;
+            border-radius: 50%;
+            text-align: center;
+            color: white;
+            line-height: 40px; 
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .dash-line{
+                position: absolute;
+                left: 0;
+                /* right: 134px; */
+                top: 1105px;
+        }
+
+/* CONTAINER CAPABILITIES */
+
+        .container-capab{
+            margin-left: 135px;
+            margin-right: 135px;
+            margin-bottom: 172px;
+        }
+
+        .cap-row{
+            display: flex;
+            flex-direction: row; 
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .dig-expert h1{
+            width: 470px;
+            height: 50px;
+            color: black;
+            font-size: 36px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 50px;
+            margin-bottom: 32px;
+        }
+
+        .dig-expert h2{
+            color: black;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: 6px;
+            opacity: 50%;
+            margin-bottom: 24px;
+            width: 145px;
+            height: 12px;
+        }
+
+        .dig-expert p{
+            color: #000;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 200%; /* 28px */
+            width: 470px;
+            height: 92px;
+            flex-shrink: 0;
+        }
+
+        .cap-pic .img{
+            width: 570px;
+            height: 440px;
+            flex-shrink: 1;
+        }
+
+/* CONTAINER PROJECTS */
+        .container-projects{
+            margin-bottom: 172px;
+        }
+
+        .our-projects {
+            text-align: center;
+            margin-left: 135px;
+            margin-right: 135px;
+            margin-bottom: 72px;
+        }
+
+        .container-project{
+            margin-left: 135px;
+            margin-right: 135px;
+        }
+
+        .project-row{
+            display: flex;
+            flex-direction: row; 
+            justify-content: space-between;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            margin-bottom: 70px !important;
+        }
+
+        .container-projects h2{
+            width: auto;
+            color: black;
+            text-align: center;
+            font-family: "Kumbh Sans";
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: 6px;
+            opacity: 50%;
+            margin-bottom: 24px;
+
+        }
+
+        .container-projects h1{
+            color:black;
+            font-family: "Kumbh Sans";
+            font-size: 36px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            margin-bottom: 72px;
+            height: 36px;
+        }
+
+        .project-img{
+            width: auto;
+        }
+
+
+        .project-img img{
+            width: 550px;
+            height: 400px;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .button-row {
+            display: flex;
+            justify-content: center
+        }
+
+        .see-all {
+            outline: none;
+            cursor: pointer;
+            padding: 24px, 48px, 24px, 48px;
+            width: 179px;
+            height: 60px;
+            border-radius: 32px;
+            border: 0.5px solid  #4b4747;
+            background-color: white;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 18px;
+            letter-spacing: 0em;
+            text-align: center;
+            color: rgb(0, 0, 0);
+            font-style: normal;
+            text-decoration: none;
+            margin-left: auto;
+            margin-right: auto;
+        } 
+
+        .see-all:hover {
+            scale: 1.02;
+            color: #1A47E5;
+            text-decoration: none !important;
+        }
+
+
+/* CONTAINER HIRE US*/
+
+        .container-hire{
+            margin-bottom: 172px;
+            margin-left: 135px;
+            margin-right: 135px;
+        }
+
+        .hire-us {
+            text-align: center;
+            margin-bottom: 72px;
+        }
+
+        .hire-row1{
+            display: flex;
+            flex-direction: row; 
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .hire-row2{
+            display: flex;
+            flex-direction: row; 
+            margin-bottom: 30px;
+            justify-content: space-evenly;
+        }
+
+        .container-hire h1{
+            color:black;
+            font-size: 36px;
+            font-style: normal;
+            font-weight: 700;
+            margin-bottom: 72px;
+            height: 100%;
+            line-height: normal;
+        }
+
+        .container-hire h2{
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 700;
+            color: black;
+        }
+
+        .container-hire p{
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            margin-bottom: 0;
+        }
+
+        .hire{
+            display: flex;
+            width: 370px;
+            height: 229px;
+            padding: 32px;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 16px;
+            flex-shrink: 0;
+            border-radius: 20px;
+            border: 1px solid #F1F1F1;
+            background: #FFF;
+        }
+
+/* CONTAINER CLIENTS*/
+
+
+        .container-clients{
+            margin-bottom: 172px;
+            margin-left: 135px;
+            margin-right: 135px;
+        }
+
+        .clients-row{
+            display: flex;
+            flex-direction: row; 
+            justify-content: space-between;
+        }
+
+        .clients h1{
+            color: black;
+            font-size: 36px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            margin-bottom: 24px;
+        }
+
+        .clients p{
+            color: #000;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 30px;
+        }
+
+        .logos{
+            display: flex;
+            flex-direction: column;
+            gap: 94px;
+        }
+
+        .logos-row{
+            display: flex;
+            flex-direction: row; 
+            gap: 50px;
+            align-items: flex-end; 
+        }
+
+
+/* CONTAINER COLLABORATE */
+
+        .container-collaborate{
+            background: #1E2A54;
+            position: relative;    
+        }
+
+        .collaborate-row{
+            display: flex;
+            flex-direction: row; 
+            justify-content: space-between;
+            align-items: center;
+            margin-left: 135px;
+            margin-right: 135px; 
+        }
+
+        .collaborate h1{
+            color: #FFF;
+            font-size: 36px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 50px; 
+            margin-top: 72px;
+            margin-bottom: 24px;
+        }
+
+        .collaborate p{
+            color: #FFF;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            margin-bottom: 72px;
+        }
+
+        .get-started-btn {
+            border: none;
+            outline: none;
+            cursor: pointer;
+            width: 211px;
+            height: 66px;
+            padding: 24px 40px;
+            border-radius: 55px;
+            background-color: #1FC2E5;
+            color: #FFF;
+            font-size: 16px;
+            font-weight: 700;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block; 
+        } 
+
+        .get-started-btn:hover {
+            scale: 1.02;
+            color: black;
+            text-decoration: none !important;
+        }
+
+        .lines2{
+            width: 135px;
+            height: 198px;
+            position: absolute;
+            right: 0;
+            top:0;
+        }
+
+
+/* RESPONSIVE DESIGN*/
+
+        @media only screen and (max-width: 1357px) {
+
+/* CONTAINER-TEAM RESPOSIVE */
+            .container-team {
+                display: flex;
+                position: relative;
+                flex-direction: column;
+                height: auto;
+                margin-top: 60px;
+                margin-bottom: 68px;
+            }
+
+            .content, 
+            .image-container {
+                position: static;
+                width: 100%;
+                text-align: center;
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+
+            .how-it-works-btn {
+                margin-bottom: 24px;    
+                width: 100% !important;    
+            }
+
+            .content h1 {
+                font-size: 36px;
+                line-height: 50px;
+                margin-bottom: 32px;
+                margin-top: 0;
+                text-align: center;
+            }
+
+            .content h2 {
+                font-size: 24px;
+                line-height: normal;
+                margin-bottom: 60px;
+                text-align: center;
+            }
+
+            .image-container img {
+                width: 100%;
+                height: auto;
+                margin-bottom: 40px;
+            }
+
+            .social-links {
+                width: 50%; 
+                bottom: 20px; 
+            }
+
+            .social-links img {
+                height: 10px; 
+                width: 30%; 
+            }
+
+/* CONTAINER-WORK RESPOSIVE */
+
+            .custom-row{
+                flex-direction: column; 
+                margin-bottom: 0 !important;
+            }
+
+            .icon {
+                width: 20px; 
+                height: 20px; 
+            }
+
+            .container-work{
+                margin-left: 16px;
+                margin-right: 16px;
+                margin-bottom: 96px;
+            }
+
+            .how-we-work {
+                text-align: center;
+                margin-left: 0;
+                margin-right: 0;
+                margin-bottom: 84px;
+                width: auto;
+            }
+
+            .container-work h1,
+            .container-work h2 {
+                width: 100%;
+                height: 100%;
+
+            }
+
+            .container-work h1{
+                font-size: 24px;
+            }
+
+            .container-steps{
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            .step{
+                width: auto;
+                height: auto;
+                margin-bottom: 24px;
+
+            }
+
+            .step p{
+                margin-bottom: 0 !important;
+            }
+
+            .dash-line{
+                display: none;
+            }
+
+/* CONTAINER-CAPABILITIES RESPOSIVE */
+
+            .cap-row{
+                flex-direction: column; 
+            }
+
+            .container-capab{
+
+                margin-left: 16px;
+                margin-right: 16px;
+                margin-bottom: 120px;
+
+            }
+
+            .dig-expert {
+                text-align: center;
+                margin-left: 0;
+                margin-right: 0;
+                
+                width: 100%;
+            }
+
+            .dig-expert h1{
+                font-size: 24px;
+                width: auto;
+                height: auto;
+                text-align: center;
+                margin-bottom: 24px;
+            }
+
+            .dig-expert h2,
+            .dig-expert p {
+                width: auto;
+                height: auto;
+                text-align: center;
+                margin-bottom: 24px;
+            }
+
+            .cap-pic{
+                width: 100%;
+            }
+
+            .cap-pic img {
+                    width: 100%;
+                    height: auto;
+                }
+
+
+/* CONTAINER-ROJECTS RESPOSIVE */ 
+
+            .container-projects {
+                display: flex;
+                position: relative;
+                flex-direction: column;
+                height: auto;
+                margin-bottom: 200px;
+                margin-left: 16px;
+                margin-right: 16px;
+            }
+
+            .project-row{
+                flex-direction: column;
+                margin-bottom: 0 !important;
+            }
+
+            .our-projects {
+                text-align: center;
+                margin-left: 0;
+                margin-right: 0;
+                margin-bottom: 0;
+                width: auto;
+            }
+
+            .container-projects h1,
+            .container-projects h2 {
+                width: 100%;
+                height: 100%;
+
+            }
+
+            .container-projects h1{
+                font-size: 24px;
+            }
+
+            .container-project{
+                margin: 0;
+            }
+
+            .project-img {
+                width: 100%;
+                margin-bottom: 32px;
+            }
+
+            .project-img img{
+                width: 100%;
+                height: auto;
+            }
+
+            .see-all {
+                width: 123PX;
+            } 
+
+/* CONTAINER-HIRE RESPOSIVE */ 
+
+            .hire-row1,
+            .hire-row2{
+                flex-direction: column;
+            }
+
+            .hire-row1{
+                margin-bottom: 0;
+            }
+
+            .container-hire{
+                margin-left: 16px;
+                margin-right: 16px;
+                margin-bottom: 88px;
+            }
+
+            .hire-us {
+                text-align: center;
+                margin-bottom: 32px;
+                width: auto;
+            }
+
+            .container-hire h1{
+                font-size: 24px;
+                margin-bottom: 0;
+            }
+
+            .hire {
+                width: 100%;
+                height: 100%;
+                margin-bottom: 32px;
+            }
+
+/* CONTAINER-CLIENTS RESPOSIVE */
+
+            .clients-row{
+                flex-direction: column; 
+            }
+
+            .container-clients{
+                margin-left: 16px;
+                margin-right: 16px;
+                margin-bottom: 120px;
+            }
+
+            .clients {
+                text-align: center;
+                margin-left: 0;
+                margin-right: 0;
+                width: 100%;
+            }
+
+            .clients h1{
+                font-size: 24px;
+                width: auto;
+                height: auto;
+                text-align: center;
+                margin-bottom: 24px;
+            }
+
+
+            .clients p {
+                width: auto;
+                height: auto;
+                text-align: center;
+                margin-bottom: 56px;
+            }
+
+            .logos{
+                display: flex;
+                flex-direction: row;
+                gap:25px;
+            }
+
+            .logos-row{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+
+            }
+
+            .logos-row img {
+                width: 100%;
+                height: 100%;
+            }
+
+/* CONTAINER COLLABORATE RESPONSIVE */
+
+            .collaborate-row{
+                flex-direction: column;
+                margin-left: 16px;
+                margin-right: 16px;
+                text-align: center;
+            }
+
+            .collaborate{
+                text-align: center !important;
+            }
+
+            .collaborate p{
+                width: 288px;
+                margin: 0 auto; ; 
+                margin-bottom: 40px;  
+            }
+
+            .get-started-btn{
+                margin-top: 0;
+                margin-bottom: 0;
+                width: 100%;
+            }
+
+            .lines2{
+                display: none;
+            }
+        
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <div class="container-team">
+        <div class="content">
+            <h1>We help people with<br>Creative process</h1>
+            <h2>The process of how to present<br>our work neatly</h2>
+            <a href="/getintouch/" class="how-it-works-btn">How it Works</a>
+        </div>
+        <div class="image-container">
+            <img src="{% static 'images/teamwork.png' %}" alt="Creative Team">
+        </div>
+        <div class="social-links">
+            <img src="{% static 'images/social_line.svg' %}">
+            <a href="https://dribbble.com/"><i class="icon ion-social-dribbble"></i></a>
+            <a href="https://www.instagram.com/"><i class="icon ion-social-instagram"></i></a>
+            <a href="https://www.facebook.com/"><i class="icon ion-social-facebook"></i></a>
+        </div>
+    </div>
+    <div id="what-do" class="container-work">
+        <div class="how-we-work">
+            <h2>HOW WE WORK</h2>
+            <h1>Let’s See How Creative Work</h1>
+        </div>
+        <div class="container-steps">
+            <div class="custom-row">
+                <div class="step">
+                    <div class="number">1</div>
+                    <h3>Exchange ideas</h3>
+                    <p>After getting a brief explanation from the client, we brainstormed something valuable to solve the problem
+                        and then sketch step</p>
+                </div>
+                <div class="step">
+                    <div class="number">2</div>
+                    <h3>Sketching</h3>
+                    <p>We got an idea, after that we started sketching and prototyping and,<br> we always pay attention to small things related to solving complex problems and running tests to get Big results</p>
+                
+                </div>
+            </div>
+            <div class="custom-row">
+                <div class="step">
+                    <div class="number">3</div>
+                    <h3>Designing</h3>
+                    <p>Conceptual models are best thought of as design-tools – a way for designers to straighten out and simplify the design and match it to the users' task-domain, thereby making it clearer to users how they should think about the application.</p>
+                </div>
+                <div class="step">
+                    <div class="number">4</div>
+                    <h3>Presentation</h3>
+                    <p>We help your business  to help get everything possible done to make sure the "last" chance for a peaceful development of the revolution, it help by the presentation</p>
+                </div>
+            </div>
+        </div>
+        <div class="dash-line">
+            <img src="{% static 'images/dash_line.svg' %}" alt="dash-line">
+        </div>
+    </div>
+    <div class="container-capab">
+        <div class="cap-row">
+            <div class="dig-expert">
+                <h2>CAPABILITIES</h2>
+                <h1>Digital Expert Experience</h1>
+                <p>In their work, designers often become expert with the device they are designing. Users are often expert at the task they are trying to perform with the device.Professional designers are usually aware of the pitfalls. </p>
+            </div>
+            <div class="cap-pic">
+                <img src="{% static 'images/capabilities.png' %}" alt="cap-pic">
+            </div>
+        </div>
+    </div>
+    <div id="projects" class="container-projects">
+        <div class="our-projects">
+            <h2>OUR PROJECTS</h2>
+            <h1>Our amazing work with various industries</h1>
+        </div>
+        <div class="container-project">
+            <div class="project-row">
+                <div class="project-img">
+                    <img src="{% static 'images/project1.png' %}" alt="proj">
+                </div>
+                <div class="project-img">
+                    <img src="{% static 'images/project2.png' %}" alt="proj">
+                </div>
+            </div>
+            <div class="project-row">
+                <div class="project-img">
+                    <img src="{% static 'images/project2.png' %}" alt="proj">
+                </div>
+                <div class="project-img">
+                    <img src="{% static 'images/project4.png' %}" alt="proj">
+                </div>
+            </div>
+        </div>
+        <div class="button-row">
+            <button class="see-all">See All</button>
+        </div>
+    </div>
+    <div class="container-hire">
+        <div class="hire-us">
+            <h1>Why Hire Us?</h1>
+        </div>
+        <div class="container-us">
+            <div class="hire-row1">
+                <div class="hire">
+                    <div class="hire-icon">
+                        <img src="{% static 'images/hire1.png' %}" alt="cap-pic">
+                    </div>
+                    <h2>Our Talent Team</h2>
+                    <p>We are very proud of a reliable and professional team in their fields, with at least 5 years of experience.</p>
+                </div>
+                <div class="hire">
+                    <div class="hire-icon">
+                        <img src="{% static 'images/hire2.png' %}" alt="cap-pic">
+                    </div>
+                    <h2>Design From Skratch </h2>
+                    <p>We understand that every business has a different target market and vision, for that we adjust it for your business.</p>
+                </div>
+                <div class="hire">
+                    <div class="hire-icon">
+                        <img src="{% static 'images/hire3.png' %}" alt="cap-pic">
+                    </div>
+                    <h2>Flexible Cost</h2>
+                    <p>With the design from sketch, for that we also adjust the price and needs for you.</p>
+                </div>
+            </div>
+            <div class="hire-row2">
+                <div class="hire">
+                    <div class="hire-icon">
+                        <img src="{% static 'images/hire4.png' %}" alt="cap-pic">
+                    </div>
+                    <h2>Collaborative Team</h2>
+                    <p>Our team is active in collaboration and communication.</div>
+                <div class="hire">
+                    <div class="hire-icon">
+                        <img src="{% static 'images/hire5.png' %}" alt="cap-pic">
+                    </div>
+                    <h2>Reliability</h2>
+                    <p>Our team is reliable to manage whole process from acquiring clients.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="clients" class="container-clients">
+        <div class="clients-row">
+            <div class="clients">
+                <h1>Our Clients</h1>
+                <p>We plessed collaborate with companies<br>all size, from startup to famous brands.</p>
+            </div>
+            <div class="logos">
+                <div class="logos-row">
+                    <img src="{% static 'images/logo1.png' %}" alt="logo-pic">
+                    <img src="{% static 'images/logo2.png' %}" alt="logo-pic">
+                    <img src="{% static 'images/logo3.png' %}" alt="logo-pic">
+                </div>
+                <div class="logos-row">
+                    <img src="{% static 'images/logo4.png' %}" alt="logo-pic">
+                    <img src="{% static 'images/logo5.png' %}" alt="logo-pic">
+                    <img src="{% static 'images/logo6.png' %}" alt="logo-pic">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-collaborate">
+        <div class="collaborate-row">
+            <div class="collaborate">
+                <h1>Let’s Collaborate With Us</h1>
+                <p>We can’t wait to make amazing project with you.</p>
+            </div>
+            <div class="start">
+                <a href="/getintouch/" class="get-started-btn">Get Started</a>
+            </div>
+        </div>
+        <div class="lines2">
+            <img src="{% static 'images/lines2.svg' %}" alt="lines">
+        </div>
+    </div>
+</body>
+</html>
+
+
+
